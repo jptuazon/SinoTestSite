@@ -10,6 +10,7 @@
 
 
 
+<meta name="date" content="2023-08-25" />
 
 <title>Simulated Normality (SiNo) Test</title>
 
@@ -1485,6 +1486,7 @@ font-size: 0.95em;
 
 <h1 class="title toc-ignore">Simulated Normality (SiNo) Test</h1>
 <h3 class="subtitle">Write-up by Justin Philip S. Tuazon</h3>
+<h4 class="date">25 August 2023</h4>
 
 </div>
 
@@ -1493,7 +1495,7 @@ font-size: 0.95em;
 <h1>Introductory Note</h1>
 <p>This is a write-up based on a research paper my group mates and I
 wrote for our Stat 142 (Introduction to Computational Statistics) course
-when we were completing our Bacehlor’s degree in Statistics at
+when we were completing our Bachelor’s degree in Statistics at
 University of the Philippines - Diliman.</p>
 <p>The paper, entitled Simulated Normality (SiNo) Test, was authored
 by:</p>
@@ -1812,15 +1814,15 @@ and documentations may still change and improve.</p>
 ## Simulated Normality Test
 ## Null Hypothesis: The population distribution is a normal distirbution.
 ## Data: rnorm(500)
-## Test Statistic: 0.0743633354593065
-## p-value: 0.343342827295562
+## Test Statistic: 0.0611242416559237
+## p-value: 0.635326078758162
 ## Result: Fail to reject the null hypothesis at 0.05 level of significance</code></pre>
 <pre class="r"><code>sino_test(rexp(500))</code></pre>
 <pre><code>## 
 ## Simulated Normality Test
 ## Null Hypothesis: The population distribution is a normal distirbution.
 ## Data: rexp(500)
-## Test Statistic: 0.498613384732138
+## Test Statistic: 0.460640278124798
 ## p-value: &lt; 0.00001
 ## Result: Reject the null hypothesis at 0.05 level of significance</code></pre>
 </div>
