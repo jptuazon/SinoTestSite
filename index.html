@@ -1576,7 +1576,8 @@ random sample of size <span class="math inline">\(n\)</span>, where
 <span class="math inline">\(n\in\mathbb{Z}^{+}\)</span>, from a
 population with probability density function <span class="math inline">\(f_{X}(\cdot)\)</span>. Suppose <span class="math inline">\(f_{X}^{*}(\cdot)\)</span> is the kernel density
 estimate, with certain parameters, for the true density <span class="math inline">\(f_{X}(\cdot)\)</span> based on the realized random
-sample <span class="math inline">\(\left(x_{1},x_{2},\dots,x_{n}\right)\)</span>.</p>
+sample <span class="math inline">\(\left(x_{1},x_{2},\dots,x_{n}\right)\)</span>. The
+null and alternative hypotheses are:</p>
 <p><span class="math display">\[H_{0}:f_{X}(\cdot)\in\mathcal{F}\]</span> <span class="math display">\[H_{1}:f_{X}(\cdot)\notin\mathcal{F}\]</span></p>
 <p>Then, from Cao and Lugosi (2005), a test statistic <span class="math inline">\(T\)</span> for testing the hypothesis that <span class="math inline">\(f_{X}(\cdot)\in\mathcal{F}\)</span> is</p>
 <p><span class="math display">\[\inf_{g\in\mathcal{F}}{\int_{\mathbb{R}}{\left|f_{X}^{*}(x)-g\right|}dx}\]</span></p>
@@ -1816,17 +1817,25 @@ and documentations may still change and improve.</p>
 ## Simulated Normality Test
 ## Null Hypothesis: The population distribution is a normal distirbution.
 ## Data: rnorm(500)
-## Test Statistic: 0.0717779664106538
-## p-value: 0.397248639423748
+## Test Statistic: 0.064381019564718
+## p-value: 0.559984383830409
 ## Result: Fail to reject the null hypothesis at 0.05 level of significance</code></pre>
 <pre class="r"><code>sino_test(rexp(500))</code></pre>
 <pre><code>## 
 ## Simulated Normality Test
 ## Null Hypothesis: The population distribution is a normal distirbution.
 ## Data: rexp(500)
-## Test Statistic: 0.463180537942269
+## Test Statistic: 0.476659898825431
 ## p-value: &lt; 0.00001
 ## Result: Reject the null hypothesis at 0.05 level of significance</code></pre>
+<pre class="r"><code>sino_test(runif(100), sig_level = 0.1)</code></pre>
+<pre><code>## 
+## Simulated Normality Test
+## Null Hypothesis: The population distribution is a normal distirbution.
+## Data: runif(100)
+## Test Statistic: 0.276981634141628
+## p-value: 0.00101497810576801
+## Result: Reject the null hypothesis at 0.1 level of significance</code></pre>
 </div>
 <div id="complete-paper" class="section level1">
 <h1>Complete Paper</h1>
