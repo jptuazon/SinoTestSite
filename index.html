@@ -1776,16 +1776,14 @@ below.</p>
   } else {
     interp &lt;- &quot;Fail to reject the null hypothesis&quot;
   }
-  if (p_val == 0) {
-    p_val &lt;- &quot;&lt; 0.00001&quot;
-  }
+  p_message &lt;- ifelse(p_val == 0, &quot;&lt; 0.00001&quot;, p_val)
   if (show_message) {
     message(paste(&quot;\nSimulated Normality Test\n&quot;,
                   &quot;Null Hypothesis: The population distribution is a &quot;,
                   &quot;normal distirbution.\n&quot;,
                   &quot;Data: &quot;, deparse(substitute(x)), &quot;\n&quot;,
                   &quot;Test Statistic: &quot;, test_stat, &quot;\n&quot;,
-                  &quot;p-value: &quot;, p_val, &quot;\n&quot;,
+                  &quot;p-value: &quot;, p_message, &quot;\n&quot;,
                   &quot;Result: &quot;, interp,
                   &quot; at &quot;, sig_level, &quot; level of significance\n&quot;, sep = &quot;&quot;))
   }
@@ -1831,15 +1829,15 @@ and documentations may still change and improve.</p>
 ## Simulated Normality Test
 ## Null Hypothesis: The population distribution is a normal distirbution.
 ## Data: rnorm(500)
-## Test Statistic: 0.0390705438602497
-## p-value: 0.981195804031944
+## Test Statistic: 0.0399707880261229
+## p-value: 0.976773893167209
 ## Result: Fail to reject the null hypothesis at 0.05 level of significance</code></pre>
 <pre class="r"><code>sino_test(rexp(500))</code></pre>
 <pre><code>## 
 ## Simulated Normality Test
 ## Null Hypothesis: The population distribution is a normal distirbution.
 ## Data: rexp(500)
-## Test Statistic: 0.508495138598288
+## Test Statistic: 0.468175137449611
 ## p-value: &lt; 0.00001
 ## Result: Reject the null hypothesis at 0.05 level of significance</code></pre>
 <pre class="r"><code>sino_test(runif(100), sig_level = 0.1)</code></pre>
@@ -1847,8 +1845,8 @@ and documentations may still change and improve.</p>
 ## Simulated Normality Test
 ## Null Hypothesis: The population distribution is a normal distirbution.
 ## Data: runif(100)
-## Test Statistic: 0.288048178718316
-## p-value: 0.000621058684100673
+## Test Statistic: 0.351527050971872
+## p-value: 8.89754936395093e-12
 ## Result: Reject the null hypothesis at 0.1 level of significance</code></pre>
 </div>
 </div>
