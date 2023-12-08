@@ -7,8 +7,7 @@
 <meta charset="utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-<meta name="image" property="og:image" content="https://i.ibb.co/tc5ScZn/nulls-plot.png">
-<meta name="description" property="og:description" content="Simaluted Normality Test - A Lilliefors-like Kernel Density Test for Normality">
+
 
 
 <meta name="date" content="2023-08-25" />
@@ -1831,15 +1830,15 @@ and documentations may still change and improve.</p>
 ## Simulated Normality Test
 ## Null Hypothesis: The population distribution is a normal distirbution.
 ## Data: rnorm(500)
-## Test Statistic: 0.0695866371760435
-## p-value: 0.444352177138079
+## Test Statistic: 0.0400743654581433
+## p-value: 0.976213810495743
 ## Result: Fail to reject the null hypothesis at 0.05 level of significance</code></pre>
 <pre class="r"><code>sino_test(rexp(500))</code></pre>
 <pre><code>## 
 ## Simulated Normality Test
 ## Null Hypothesis: The population distribution is a normal distirbution.
 ## Data: rexp(500)
-## Test Statistic: 0.472658062944056
+## Test Statistic: 0.432928927889442
 ## p-value: &lt; 0.00001
 ## Result: Reject the null hypothesis at 0.05 level of significance</code></pre>
 <pre class="r"><code>sino_test(runif(100), sig_level = 0.1)</code></pre>
@@ -1847,8 +1846,8 @@ and documentations may still change and improve.</p>
 ## Simulated Normality Test
 ## Null Hypothesis: The population distribution is a normal distirbution.
 ## Data: runif(100)
-## Test Statistic: 0.344981502409143
-## p-value: 2.87261159304109e-09
+## Test Statistic: 0.289930511891535
+## p-value: 0.000577103409977742
 ## Result: Reject the null hypothesis at 0.1 level of significance</code></pre>
 </div>
 </div>
@@ -1894,11 +1893,10 @@ distributions and sample sizes are summarized below.<br />
 Based on Figure 3, the power of the test seems to be generally largest
 for asymmetric distributions (colored red). Relatively, the power seems
 to be moderate in general for short-tailed (colored green) and
-long-tailed (colored blue) symmetric distributions, except for <span class="math inline">\(t(20)\)</span>. The power of the test when the
-true distribution <span class="math inline">\(t(20)\)</span> - this is
-not surprising since the <span class="math inline">\(t\)</span>-distribution approaches the standard
-normal distribution as <span class="math inline">\(n\to
-+\infty\)</span>.</p>
+long-tailed (colored blue) symmetric distributions, except for <span class="math inline">\(t(20)\)</span>. The power of the test is low when
+the true distribution is <span class="math inline">\(t(20)\)</span> -
+this is not surprising since the <span class="math inline">\(t\)</span>-distribution approaches the standard
+normal distribution as the degrees of freedom approach <span class="math inline">\(+\infty\)</span>.</p>
 </div>
 <div id="complete-paper" class="section level1">
 <h1>Complete Paper</h1>
